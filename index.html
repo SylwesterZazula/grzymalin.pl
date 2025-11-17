@@ -4,86 +4,118 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maliny Grzymalin – Koło Gospodyń Wiejskich</title>
+
   <style>
     :root {
-      --rasp: #a4133c;
-      --rasp-dark: #800f2f;
-      --rasp-soft: #ffccd5;
-      --bg: #fff7fa;
-      --text: #4a1a2c;
+      --black: #111;
+      --black-soft: #222;
+      --grey-line: rgba(0,0,0,.1);
+      --bg: #f5f3eb;
+      --white: #ffffff;
     }
+
     * { box-sizing: border-box; }
+
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
       background: var(--bg);
-      color: var(--text);
+      color: var(--black);
       margin: 0;
       line-height: 1.6;
     }
+
     header {
       position: sticky; top: 0;
-      background: linear-gradient(0deg, var(--rasp-soft), #ffe2e8);
-      border-bottom: 1px solid rgba(0,0,0,.06);
-      box-shadow: 0 4px 16px rgba(164,19,60,.08);
+      background: #f7f5ef;
+      border-bottom: 1px solid var(--grey-line);
+      box-shadow: 0 4px 14px rgba(0,0,0,.06);
       z-index: 50;
     }
+
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
     .nav { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; gap: 16px; }
-    .brand { display: flex; align-items: center; gap: 14px; font-weight: 800; color: var(--rasp-dark); letter-spacing: .3px; }
-    .brand svg { width: 56px; height: 56px; filter: drop-shadow(0 4px 8px rgba(0,0,0,.15)); }
+
+    .brand { display: flex; align-items: center; gap: 14px; font-weight: 800; color: var(--black-soft); letter-spacing: .3px; }
+
     nav a {
-      color: var(--rasp);
+      color: var(--black);
       font-weight: 700;
       text-decoration: none;
       margin-left: 16px;
       padding: 8px 10px;
       border-radius: 10px;
     }
-    nav a:hover { background: #ffffffaa; color: var(--rasp-dark); }
+    nav a:hover { background: rgba(0,0,0,.06); }
+
     section { padding: 64px 20px; }
-    h1, h2 { color: var(--rasp); text-align: center; margin: 0 0 10px; }
+
+    h1, h2 { color: var(--black-soft); text-align: center; margin: 0 0 10px; }
+
     p.lead { text-align: center; margin: 0 auto 24px; max-width: 780px; }
-    .hero { background: radial-gradient(1200px 400px at 50% -80px, #ffd9e1, transparent); }
-    .frame { display: block; margin: 24px auto; max-width: 860px; border-radius: 14px; border: 2px solid #fff; box-shadow: 0 12px 30px rgba(164,19,60,.18); background: #fff; }
-    .gallery { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); margin-top: 20px; }
-    .card { background: #fff; border: 1px solid rgba(0,0,0,.06); border-radius: 14px; padding: 12px; box-shadow: 0 8px 24px rgba(164,19,60,.08); }
-    footer { background: var(--rasp); color: #fff; text-align: center; padding: 28px 16px; margin-top: 36px; }
-    .btn { display: inline-block; background: var(--rasp); color: #fff; border-radius: 12px; padding: 10px 14px; text-decoration: none; font-weight: 800; box-shadow: 0 8px 18px rgba(164,19,60,.25); }
-    .btn:hover { background: var(--rasp-dark); }
+
+    .hero { background: radial-gradient(1200px 400px at 50% -80px, #eae7de, transparent); }
+
+    .frame {
+      display: block;
+      margin: 24px auto;
+      max-width: 860px;
+      border-radius: 14px;
+      border: 2px solid #fff;
+      box-shadow: 0 12px 30px rgba(0,0,0,.1);
+      background: #fff;
+    }
+
+    .gallery {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      margin-top: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--grey-line);
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    }
+
+    footer {
+      background: var(--black);
+      color: #fff;
+      text-align: center;
+      padding: 28px 16px;
+      margin-top: 36px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--black);
+      color: #fff;
+      border-radius: 12px;
+      padding: 10px 14px;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(0,0,0,.25);
+    }
+    .btn:hover { background: var(--black-soft); }
+
     .center { text-align: center; }
+
     svg { max-width: 100%; height: auto; display: block; }
   </style>
 </head>
+
 <body>
   <header>
     <div class="wrap nav">
       <div class="brand">
-        <!-- Logo: kiść malin -->
-        <svg viewBox="0 0 120 120" aria-hidden="true" role="img">
-          <defs>
-            <radialGradient id="g" cx="50%" cy="40%" r="60%">
-              <stop offset="0%" stop-color="#ff6b8f"/>
-              <stop offset="100%" stop-color="#a4133c"/>
-            </radialGradient>
-            <linearGradient id="leaf" x1="0" x2="1">
-              <stop offset="0%" stop-color="#2b6e2b"/>
-              <stop offset="100%" stop-color="#1f5a1f"/>
-            </linearGradient>
-          </defs>
-          <g transform="translate(10,8)">
-            <path d="M42 8 C50 6,58 6,66 8 C60 16,52 18,42 8" fill="url(#leaf)"/>
-            <g fill="url(#g)">
-              <circle cx="28" cy="40" r="12"/>
-              <circle cx="44" cy="40" r="12"/>
-              <circle cx="60" cy="40" r="12"/>
-              <circle cx="36" cy="56" r="12"/>
-              <circle cx="52" cy="56" r="12"/>
-              <circle cx="44" cy="72" r="12"/>
-            </g>
-          </g>
-        </svg>
-        <span>Maliny Grzymalin — Koło Gospodyń Wiejskich</span>
-      </div>
+    <img src="logo.jpg" alt="Maliny Grzymalin logo" style="height:180px; width:auto; filter: drop-shadow(0 40px 80px rgba(0,0,0,.15));">
+    <span>Maliny Grzymalin — Koło Gospodyń Wiejskich</span>
+</div>
+
+
       <nav>
         <a href="#onas">O nas</a>
         <a href="#galeria">Galeria</a>
@@ -94,113 +126,114 @@
   </header>
 
   <main>
-    <!-- O NAS: ilustracja gotowania przy stole -->
     <section id="onas" class="hero">
       <div class="wrap">
         <h1>Maliny Grzymalin</h1>
-        <p class="lead">Łączymy tradycję z nowoczesnością — promujemy lokalne smaki, kulturę i wspólne działania mieszkańców naszej wsi.</p>
-        <figure class="frame">
-          <svg viewBox="0 0 900 420" role="img" aria-label="O nas – wspólne gotowanie przy stole">
-            <defs>
-              <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
-                <circle cx="6" cy="6" r="3" fill="#a4133c" fill-opacity="0.08"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="#ffeff3"/>
-            <rect x="0" y="0" width="100%" height="100%" fill="url(#dots)"/>
-            <g fill="#a4133c" fill-opacity="0.14">
-              <circle cx="140" cy="120" r="38"/>
-              <circle cx="760" cy="120" r="38"/>
-            </g>
-            <g>
-              <rect x="150" y="220" rx="14" ry="14" width="600" height="120" fill="#a4133c" fill-opacity="0.12"/>
-              <circle cx="280" cy="210" r="28" fill="#a4133c" fill-opacity="0.35"/>
-              <circle cx="620" cy="210" r="28" fill="#a4133c" fill-opacity="0.35"/>
-              <rect x="360" y="240" width="180" height="40" rx="10" fill="#a4133c" fill-opacity="0.3"/>
-              <rect x="430" y="180" width="40" height="40" rx="8" fill="#a4133c" fill-opacity="0.25"/>
-            </g>
-          </svg>
-        </figure>
+        <p class="lead">
+  Jesteśmy grupą aktywnych, energicznych i pełnych pasji mieszkańców Grzymalina,
+  których łączy chęć tworzenia czegoś wyjątkowego dla naszej społeczności.
+  Nasze Koło Gospodyń Wiejskich “Maliny Grzymalin” powstało z potrzeby działania,
+  wspólnej integracji i budowania lokalnych więzi, które od lat stanowią fundament
+  życia naszej wsi.  
+  <br><br>
+  Organizujemy warsztaty, spotkania tematyczne, kulinarne inicjatywy, kiermasze oraz
+  wydarzenia kulturalne, które angażują zarówno dzieci, młodzież, jak i dorosłych.
+  Szukamy wyzwań, inspiracji i nowych pomysłów, a każde przedsięwzięcie traktujemy
+  jako okazję do nauki, współpracy i rozwijania lokalnych tradycji.  
+  <br><br>
+  Wierzymy, że razem możemy tworzyć piękne rzeczy — łączyć tradycję z nowoczesnością,
+  wspierać rozwój naszej miejscowości i budować miejsce, w którym chce się być,
+  działać i tworzyć.
+</p>
+        <figure class="frame" style="padding:0;">
+  <img src="logo.jpg" 
+       alt="Maliny Grzymalin Logo" 
+       style="
+         width:100%;
+         max-width:600px;
+         display:block;
+         margin:0 auto;
+         border-radius:18px;
+         box-shadow:0 12px 30px rgba(0,0,0,.12);
+       ">
+</figure>
+
       </div>
     </section>
 
-    <!-- GALERIA: trzy znaczące ilustracje -->
     <section id="galeria">
       <div class="wrap">
         <h2>Galeria</h2>
         <div class="gallery">
-          <figure class="card" aria-label="Warsztaty – miska i wałek">
-            <svg viewBox="0 0 500 300" role="img" aria-label="Warsztaty kulinarne – miska i wałek">
-              <rect width="100%" height="100%" fill="#ffdee7"/>
-              <ellipse cx="250" cy="220" rx="160" ry="28" fill="#a4133c" fill-opacity=".15"/>
-              <rect x="120" y="140" width="260" height="80" rx="20" fill="#a4133c" fill-opacity=".2"/>
-              <rect x="90" y="110" width="320" height="26" rx="13" fill="#a4133c" fill-opacity=".25"/>
+
+          <figure class="card">
+            <svg viewBox="0 0 500 300">
+              <rect width="100%" height="100%" fill="#f3f1ea"/>
+              <rect x="120" y="140" width="260" height="80" rx="20" fill="#00000020"/>
             </svg>
             <figcaption class="center">Warsztaty kulinarne</figcaption>
           </figure>
-          <figure class="card" aria-label="Kiermasz – słoiki z przetworami">
-            <svg viewBox="0 0 500 300" role="img" aria-label="Stoisko z przetworami">
-              <rect width="100%" height="100%" fill="#ffe6ec"/>
-              <rect x="110" y="140" width="80" height="90" rx="10" fill="#a4133c" fill-opacity=".25"/>
-              <rect x="210" y="125" width="80" height="105" rx="10" fill="#a4133c" fill-opacity=".25"/>
-              <rect x="310" y="135" width="80" height="95" rx="10" fill="#a4133c" fill-opacity=".25"/>
-              <rect x="100" y="110" width="300" height="20" fill="#a4133c" fill-opacity=".2"/>
+
+          <figure class="card">
+            <svg viewBox="0 0 500 300">
+              <rect width="100%" height="100%" fill="#f3f1ea"/>
+              <rect x="110" y="140" width="80" height="90" rx="10" fill="#00000020"/>
             </svg>
             <figcaption class="center">Kiermasz i przetwory</figcaption>
           </figure>
-          <figure class="card" aria-label="Zbiory malin – gałązka">
-            <svg viewBox="0 0 500 300" role="img" aria-label="Zbiory malin – gałązka">
-              <rect width="100%" height="100%" fill="#ffeef3"/>
-              <path d="M80 200 C160 120, 340 120, 420 200" stroke="#2b6e2b" stroke-width="10" fill="none"/>
-              <circle cx="210" cy="170" r="18" fill="#a4133c"/>
-              <circle cx="240" cy="160" r="16" fill="#a4133c"/>
-              <circle cx="270" cy="170" r="18" fill="#a4133c"/>
+
+          <figure class="card">
+            <svg viewBox="0 0 500 300">
+              <rect width="100%" height="100%" fill="#f3f1ea"/>
+              <circle cx="210" cy="170" r="18" fill="#111"/>
+              <circle cx="240" cy="160" r="16" fill="#111"/>
+              <circle cx="270" cy="170" r="18" fill="#111"/>
             </svg>
-            <figcaption class="center">Zbiory malin</figcaption>
+            <figcaption class="center">Poznaj MALINY</figcaption>
           </figure>
+
         </div>
       </div>
     </section>
 
-    <!-- AKTUALNOŚCI: ikona kalendarza / sceny wydarzeń -->
     <section id="aktualnosci">
-      <div class="wrap">
-        <h2>Aktualności</h2>
-        <figure class="frame">
-          <svg viewBox="0 0 900 360" role="img" aria-label="Aktualności – kalendarz wydarzeń">
-            <rect width="100%" height="100%" fill="#ffe3ea"/>
-            <rect x="220" y="60" width="460" height="220" rx="16" fill="#fff" stroke="#a4133c" stroke-opacity=".35"/>
-            <rect x="220" y="60" width="460" height="60" rx="16" fill="#a4133c" fill-opacity=".2"/>
-            <circle cx="260" cy="90" r="10" fill="#a4133c"/>
-            <circle cx="300" cy="90" r="10" fill="#a4133c"/>
-            <rect x="260" y="140" width="60" height="40" rx="8" fill="#a4133c" fill-opacity=".25"/>
-            <rect x="340" y="140" width="60" height="40" rx="8" fill="#a4133c" fill-opacity=".25"/>
-            <rect x="420" y="140" width="60" height="40" rx="8" fill="#a4133c" fill-opacity=".25"/>
-            <rect x="260" y="200" width="120" height="40" rx="8" fill="#a4133c" fill-opacity=".25"/>
-          </svg>
-        </figure>
-        <p class="center">Już wkrótce opublikujemy harmonogram wydarzeń, warsztatów i wspólnych inicjatyw.</p>
-      </div>
-    </section>
+  <div class="wrap">
+    <h2>Aktualności</h2>
 
-    <!-- KONTAKT: ikona koperty i telefonu -->
+    <figure class="frame">
+      <img src="warsztaty.jpg" alt="Warsztaty z wianków bożonarodzeniowych" style="width:100%; border-radius:12px;">
+    </figure>
+
+    <p class="center" style="max-width:760px; margin:20px auto; font-size:18px;">
+      <strong>Zapraszamy na Warsztaty z Wianków Bożonarodzeniowych!</strong><br><br>
+      Spotkanie odbędzie się <strong>30 listopada o godz. 16:00</strong> w Sali Wiejskiej w Grzymalinie.<br>
+      Podczas warsztatów uczestnicy samodzielnie wykonają świąteczne wianki,
+      korzystając z naturalnych ozdób, pachnących gałązek oraz owocowych dekoracji.
+      <br><br>
+      <strong>Koszt udziału: 80 zł</strong><br>
+      Zapisy przyjmujemy do <strong>24 listopada</strong> pod numerem: <strong>661&nbsp;254&nbsp;318</strong>.<br><br>
+      <span style="font-weight:bold; color:#a00;">Liczba miejsc jest ograniczona!</span>
+    </p>
+
+  </div>
+</section>
+
+
     <section id="kontakt">
       <div class="wrap">
         <h2>Kontakt</h2>
         <figure class="frame">
-          <svg viewBox="0 0 900 320" role="img" aria-label="Kontakt – koperta i telefon">
-            <rect width="100%" height="100%" fill="#ffe9ef"/>
-            <path d="M180 100 h220 v120 h-220 z" fill="#fff" stroke="#a4133c" stroke-opacity=".35"/>
-            <path d="M180 100 l110 70 l110 -70" fill="#a4133c" fill-opacity=".18"/>
-            <rect x="560" y="80" width="120" height="180" rx="24" fill="#a4133c" fill-opacity=".2"/>
-            <rect x="585" y="105" width="70" height="15" rx="4" fill="#a4133c" fill-opacity=".35"/>
-            <rect x="585" y="170" width="70" height="15" rx="4" fill="#a4133c" fill-opacity=".35"/>
+          <svg viewBox="0 0 900 320">
+            <rect width="100%" height="100%" fill="#f2f0ea"/>
+            <path d="M180 100 h220 v120 h-220 z" fill="#fff" stroke="#111"/>
           </svg>
         </figure>
+
         <p class="center"><strong>Email:</strong> kontakt@grzymalin.pl</p>
-        <p class="center"><a class="btn" href="https://www.facebook.com/profile.php?id=61561025188800" target="_blank" rel="noopener">Odwiedź nas na Facebooku</a></p>
+        <p class="center"><a class="btn" href="https://www.facebook.com/profile.php?id=61561025188800" target="_blank">Odwiedź nas na Facebooku</a></p>
       </div>
     </section>
+
   </main>
 
   <footer>

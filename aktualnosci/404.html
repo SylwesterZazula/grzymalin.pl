@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=/aktualnosci/" />
-    <script>
-      window.location.replace("/aktualnosci/" + window.location.pathname.replace("/aktualnosci/", ""));
-    </script>
-  </head>
-  <body></body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirecting…</title>
+  <script>
+    // Jeśli trafiliśmy na /aktualnosci/404.html to przekieruj na /aktualnosci/
+    // zachowując ścieżkę w hash-u (żeby SPA mogła ją odczytać)
+    (function () {
+      var base = "/aktualnosci";
+      var path = window.location.pathname;
+
+      // usuwamy "/aktualnosci" z początku ścieżki, jeśli jest
+      var rest = path.startsWith(base) ? path.slice(base.length) : path;
+
+      // budujemy adres: /aktualnosci/#/<rest>?<query>
+      var target = base + "/#"+ rest + window.location.search + window.location.hash;
+      window.location.replace(target);
+    })();
+  </script>
+</head>
+<body></body>
 </html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Przekierowanie…</title>
+  <script>
+    // Przekierowanie 404 do aplikacji w /aktualnosci
+    (function () {
+      var base = "/aktualnosci";
+      var path = window.location.pathname;
+
+      // Jeżeli 404 dotyczy ścieżki /aktualnosci/... to przekieruj do SPA
+      if (path.startsWith(base)) {
+        var rest = path.slice(base.length); // np. /post/abc
+        var target = base + "/#" + rest + window.location.search;
+        window.location.replace(target);
+      } else {
+        // jeśli 404 nie dotyczy aktualnosci, wróć na stronę główną
+        window.location.replace("/");
+      }
+    })();
+  </script>
+</head>
+<body></body>
+</html>
